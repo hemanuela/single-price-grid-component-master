@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/** General style **/
 html{
     font-family: 'Karla', sans-serif;
     font-size: 16px;
@@ -15,29 +16,107 @@ html{
     max-width: 100%;
 }
 
+/** Display Grid **/
+.body-columns{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.25fr 0.25fr;
+    grid-template-areas: 
+        "header header"
+        "subscription why-us";
+    align-content: center;
+}
 
-h2{ /** Cyan **/
+#header{
+    background-color: white;
+    grid-area: header;
+    padding: 40px;
+    border-radius: 6px 6px 0 0;
+    border-left: none;
+    line-height: 2rem;
+}
+
+#subscription{
+    background-color: hsl(179, 62%, 43%);
+    grid-area: subscription;
+    padding: 40px;
+    border-radius: 0px 0px 0px 6px;
+    border-left: none;
+    justify-items: center;
+}
+
+#why-us{
+    background-color: hsla(179, 37%, 56%, 0.781);
+    grid-area: why-us;
+    padding: 40px;
+    border-radius: 0px 0px 6px 0px;
+    border-left: none;
+}
+
+
+/** Titles **/
+#header h2{ /** Cyan - Join our community **/
     color: hsl(179, 62%, 43%);
     padding-bottom: 1.2rem; 
 }
 
-h3.yellow-title{ /** Bright Yellow **/
+#header h3{ /** Bright Yellow - 30-day... **/
     color: hsl(71, 73%, 54%);
     padding-bottom: 0.5rem;
 }
 
-h3{ /** Ligth Gray **/
+h3{ /** Ligth Gray - Monthlly... and Why us **/
     color: hsl(204, 43%, 93%);
 }
 
-.header p { /** Grayish Blue **/
+
+/** Body text **/
+#header p { /** Grayish Blue **/
     color:  hsl(218, 22%, 67%) ;
 }
 
-.subscription p, .why-us{
+#subscription p, #why-us p{
     color:hsl(204, 43%, 93%);
 }
 
+
+/** Body text - adjustments**/
+#why-us p{
+    font-size: 14px;
+    line-height: 1.4rem ;
+}
+
+#why-us h3{
+    padding-bottom: 0.8rem;
+}
+
+#subscription h3{
+    padding-bottom: 0.8rem;
+}
+
+#dollar{
+    font-size: 36px;
+    font-weight: bold;
+    padding-bottom: 0.6rem;
+}
+
+#subscription span {
+    font-size: 14px;
+    color: hsla(0, 0%, 95%, 0.521);
+    font-weight: lighter;
+    vertical-align: middle;
+}
+
+#subscription{
+    justify-content: center;
+}
+
+#full-access{
+    padding-bottom: 1.8rem;
+}
+
+/** Button **/
 .button {
     display: flex;
     align-items: center;
@@ -51,80 +130,33 @@ h3{ /** Ligth Gray **/
     justify-content: center;
 }
 
-
 .button:hover {
     background: hsl(71, 73%, 48%);
 }
- 
-.header {
-    background:white;
-    padding: 40px;
-    border-radius: 6px 6px 0 0;
-    border-left: none;
-    line-height: 2rem;
-}
 
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    
-
- }
-
-.subscription {
-    background: hsl(179, 62%, 43%);
-    padding: 40px;
-    border-radius: 0px 0px 0px 6px;
-    border-left: none;
-    justify-items: center;
-
-}
-
-.why-us {
-    background: #4abebd;
-    padding: 40px;
-    border-radius: 0px 0px 6px 0px;
-    border-left: none;
-    
-}
-
-.why-us p {
-    font-size: 14px;
-    line-height: 1.4rem ;
-}
-
-.why-us h3{
-    padding-bottom: 0.8rem;
-}
-
-.container .subscription h3{
-    padding-bottom: 0.8rem;
-}
-
-.container .subscription #dollar{
-    font-size: 36px;
-    font-weight: bold;
-    padding-bottom: 0.6rem;
-}
-
-.container .subscription #full-access{
-    padding-bottom: 1.8rem;
-}
-
-.container .subscription{
-    justify-content: center;
-}
-
-.container .subscription span {
-    font-size: 14px;
-    color: hsla(0, 0%, 95%, 0.521);
-    font-weight: lighter;
-    vertical-align: middle;
-      
-}
 
 footer{
     display: none;
 }
 
+
+/** Mobile - responsive **/
+@media only screen and (max-width:550px) {
+    .body-columns{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 0.5fr;
+        grid-template-areas: 
+            "header"
+            "subscription"
+            "why-us";
+        padding: 3rem;      
+    }
+
+    #subscription{
+        border-radius: 0 0 0 0;
+    }
+
+    #why-us{
+        border-radius: 0 0 6px 6px;
+    }
+}
