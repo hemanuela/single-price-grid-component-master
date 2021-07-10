@@ -32,13 +32,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+https://github.com/hemanuela/single-price-grid-component-master/blob/main/images/screen-shot.jpg
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/hemanuela/single-price-grid-component-master)
-- Live Site URL: [Add live site URL here](https://hemanuela.github.io/single-price-grid-component-master/)
+- Solution URL: [My code](https://github.com/hemanuela/single-price-grid-component-master)
+- Live Site URL: [See the result!](https://hemanuela.github.io/single-price-grid-component-master/)
 
 ## My process
 
